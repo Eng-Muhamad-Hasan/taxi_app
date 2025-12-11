@@ -36,4 +36,9 @@ abstract class AppStyles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
+  static const TextStyle regular18 = TextStyle(
+    fontFamily: 'NotoKufiArabic',
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+  );
 }

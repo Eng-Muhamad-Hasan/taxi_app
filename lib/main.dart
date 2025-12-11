@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:taxi_app/core/themes/origin_theme.dart';
-import 'package:taxi_app/features/google_map/view/map_screen.dart';
+import 'package:taxi_app/features/onboarding/view/onboarding_view.dart';
 
 import 'core/functions/on_generate_routes.dart';
 import 'generated/l10n.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: MapScreen.routeName,
+      initialRoute: OnboardingView.routeName,
     );
   }
 }
