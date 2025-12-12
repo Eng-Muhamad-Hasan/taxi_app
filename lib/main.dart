@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:taxi_app/core/themes/origin_theme.dart';
-import 'package:taxi_app/features/onboarding/view/onboarding_view.dart';
+import 'package:taxi_app/core/utils/app_router.dart';
 
-import 'core/functions/on_generate_routes.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -15,7 +14,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       theme: originTheme,
       localizationsDelegates: const [
         S.delegate,
@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: OnboardingView.routeName,
+      
     );
   }
 }

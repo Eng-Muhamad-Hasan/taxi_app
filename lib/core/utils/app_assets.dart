@@ -1,12 +1,16 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   static const String imagesAccountFill = "assets/images/account-fill.svg";
 
   static const String imagesAccountOut = "assets/images/account-out.svg";
 
   static const String imagesAppleIcon = "assets/images/apple-icon.svg";
+
+  static const String imagesAuthScreenLogo = "assets/images/auth-screen-logo.svg";
+
+  static const String imagesAuthScreenLogo2 = "assets/images/auth-screen-logo2.svg";
 
   static const String imagesCategory = "assets/images/category.svg";
 
@@ -42,22 +46,21 @@ class Assets {
 
   static const String imagesLogout = "assets/images/logout.svg";
 
-  static const String imagesMapFavoriteMarker =
-      "assets/images/map_favorite_marker.svg";
+  static const String imagesMapFavoriteMarker = "assets/images/map_favorite_marker.svg";
 
   static const String imagesMarker = "assets/images/marker.png";
 
   static const String imagesMicrophone = "assets/images/microphone.svg";
 
-  static const String imagesNotificationBing =
-      "assets/images/notification-bing.svg";
+  static const String imagesNotificationBing = "assets/images/notification-bing.svg";
+
+  static const String imagesObsecureEye = "assets/images/obsecure-eye.svg";
 
   static const String imagesPassword = "assets/images/password.svg";
 
   static const String imagesPasswordKey = "assets/images/password-key.svg";
 
-  static const String imagesPaymentSettings =
-      "assets/images/payment-settings.svg";
+  static const String imagesPaymentSettings = "assets/images/payment-settings.svg";
 
   static const String imagesPaypalIcon = "assets/images/paypal-icon.svg";
 
@@ -87,3 +90,4 @@ class Assets {
 
   static const String imagesWalletOut = "assets/images/wallet-out.svg";
 }
+
