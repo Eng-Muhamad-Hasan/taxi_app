@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:taxi_app/core/shared/custom_main_button.dart';
@@ -6,6 +7,9 @@ import 'package:taxi_app/core/utils/app_assets.dart';
 import 'package:taxi_app/core/utils/app_colors.dart';
 import 'package:taxi_app/core/utils/app_router.dart';
 import 'package:taxi_app/core/utils/app_styles.dart';
+import '../../../../../core/shared/custom_media_button.dart';
+import '../../../../../core/shared/custom_scndry_button.dart';
+import '../../cubit/auth-cubit/auth_cubit.dart';
 
 class AuthScreenBody extends StatelessWidget {
   const AuthScreenBody({super.key});
@@ -32,57 +36,19 @@ class AuthScreenBody extends StatelessWidget {
             style: AppStyles.regular16.copyWith(color: AppColors.textScndry),
           ),
           const SizedBox(height: 38),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.divColor,
-              minimumSize: const Size(double.infinity, 54),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              spacing: 14,
-              children: [
-                SvgPicture.asset(Assets.imagesGoogleIcon),
-                Text(
-                  'المتابعة باستخدام غوغل',
-                  style: AppStyles.regular16.copyWith(
-                    color: AppColors.textColor,
-                  ),
-                ),
-              ],
-            ),
+          CustomMediaButton(
+            buttonText: 'المتابعة باستخدام غوغل',
+            buttonImage: Assets.imagesGoogleIcon,
+            onPressed: () {
+              context.read<AuthCubit>().signInWithGoogle();
+            },
           ),
 
           const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.divColor,
-              minimumSize: const Size(double.infinity, 54),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              spacing: 14,
-              children: [
-                SvgPicture.asset(Assets.imagesFacebookIcon),
-                Text(
-                  'المتابعة باستخدام فيسبوك',
-                  style: AppStyles.regular16.copyWith(
-                    color: AppColors.textColor,
-                  ),
-                ),
-              ],
-            ),
+          const CustomMediaButton(
+            buttonText: 'المتابعة باستخدام فيسبوك',
+            buttonImage: Assets.imagesFacebookIcon,
           ),
-
           const SizedBox(height: 16),
           CustomMainButton(
             buttonText: 'تسجيل الدخول',
@@ -92,26 +58,9 @@ class AuthScreenBody extends StatelessWidget {
           ),
 
           const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.backgroundColor,
-              minimumSize: const Size(double.infinity, 54),
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(
-                  width: 2,
-                  strokeAlign: BorderSide.strokeAlignCenter,
-                  color: AppColors.primaryColor,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-
-            child: Text(
-              'إنشاء حساب',
-              style: AppStyles.bold16.copyWith(color: AppColors.textColor),
-            ),
-          ),
+           CustomScndryButton(buttonText:  'إنشاء حساب',onPressed: () {
+            context.pushNamed(AppRouter.kSignupView);
+          },),
         ],
       ),
     );

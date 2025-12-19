@@ -4,6 +4,7 @@ import 'package:taxi_app/features/auth/presentation/view/auth_screen.dart';
 import 'package:taxi_app/features/auth/presentation/view/login_view.dart';
 import 'package:taxi_app/features/auth/presentation/view/signup_view.dart';
 import 'package:taxi_app/features/google_map/view/map_screen.dart';
+import 'package:taxi_app/features/home/presentation/view/home_view.dart';
 import 'package:taxi_app/features/onboarding/view/onboarding_view.dart';
 
 abstract class AppRouter {
@@ -12,6 +13,7 @@ abstract class AppRouter {
   static const kAuthScreen = '/authScreen';
   static const kSignupView = '/signupView';
   static const kLoginView = '/loginView';
+  static const kHomeView = '/homeView';
 
   static final router = GoRouter(
     routes: [
@@ -20,6 +22,28 @@ abstract class AppRouter {
         path: kMapScreen,
         name: kMapScreen,
         builder: (context, state) => const MapScreen(),
+      ),
+      GoRoute(
+        path: kHomeView,
+        name: kHomeView,
+        pageBuilder: (context, state) => CustomTransitionPage(
+          key: state.pageKey,
+          child: const HomeView(),
+          transitionDuration: const Duration(milliseconds: 380),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            final curved = CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeInToLinear,
+            );
+            return FadeTransition(
+              opacity: curved,
+              child: ScaleTransition(
+                scale: Tween<double>(begin: 0.96, end: 1.0).animate(curved),
+                child: child,
+              ),
+            );
+          },
+        ),
       ),
       GoRoute(
         path: kLoginView,
@@ -60,7 +84,10 @@ abstract class AppRouter {
                   begin: const Offset(-0.2, 0),
                   end: Offset.zero,
                 ).animate(
-                  CurvedAnimation(parent: animation, curve: Curves.easeInOutCubic),
+                  CurvedAnimation(
+                    parent: animation,
+                    curve: Curves.easeInOutCubic,
+                  ),
                 );
             final fade = Tween<double>(begin: 0.0, end: 1.0).animate(animation);
             return SlideTransition(

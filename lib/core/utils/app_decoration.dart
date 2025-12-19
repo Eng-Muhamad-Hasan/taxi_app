@@ -11,7 +11,7 @@ abstract class AppDecoration {
     borderSide: BorderSide(
       strokeAlign: BorderSide.strokeAlignOutside,
       color: AppColors.textColor,
-      width: 3,
+      width: 2,
     ),
   );
 }

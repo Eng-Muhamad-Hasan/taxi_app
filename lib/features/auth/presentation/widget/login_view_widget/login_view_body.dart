@@ -6,7 +6,6 @@ import 'login_gray_bubble_widget.dart';
 import 'login_view_content.dart';
 import 'login_view_header.dart';
 import 'login_yellow_bubble_widget.dart';
-
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
   @override

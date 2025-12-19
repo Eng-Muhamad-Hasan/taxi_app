@@ -16,6 +16,16 @@ abstract class AppStyles {
     fontSize: 12,
     fontWeight: FontWeight.w700,
   );
+  static const TextStyle bold10 = TextStyle(
+    fontFamily: 'NotoKufiArabic',
+    fontSize: 10,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle semiBold16 = TextStyle(
+    fontFamily: 'NotoKufiArabic',
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
   static const TextStyle semiBold24 = TextStyle(
     fontFamily: 'NotoKufiArabic',
     fontSize: 24,

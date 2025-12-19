@@ -89,5 +89,7 @@ class Assets {
   static const String imagesWalletFill = "assets/images/wallet-fill.svg";
 
   static const String imagesWalletOut = "assets/images/wallet-out.svg";
+
+  static const String lottieMaterialWaveLoading = "assets/lottie/material-wave-loading.json";
 }
 
